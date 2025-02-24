@@ -14,7 +14,50 @@ const colorYellow = "rgba(255, 205, 86, 1)";
 const colorPurple = "rgba(153, 102, 255, 1)";
 const colorOrange = "rgba(255, 159, 64, 1)";
 
-ctx.beginPath();
+ctx.beginPath(); // Starting Point = SP
 ctx.strokeStyle = colorRed;
-ctx.lkineWidth = 5;
-ctx.arc(200, 300, radius, angle * 0, angle * 360, false);
+ctx.lineWidth = 10;
+ctx.arc(200, 300, radius, angle * 0, angle * 360, false); // SP
+ctx.stroke();
+
+ctx.beginPath(); // Ending Point = EP
+ctx.strokeStyle = colorRed;
+ctx.lineWidth = 10;
+ctx.arc(700, 300, radius, angle * 0, angle * 360, false); // EP
+ctx.stroke();
+
+ctx.beginPath(); // Control Point 1 = CP1
+ctx.strokeStyle = colorBlue;
+ctx.lineWidth = 10;
+ctx.arc(300, 100, radius, angle * 0, angle * 360, false); // CP1
+ctx.stroke();
+
+ctx.beginPath(); // Control Point 2 = CP2
+ctx.strokeStyle = colorBlue;
+ctx.lineWidth = 10;
+ctx.arc(500, 650, radius, angle * 0, angle * 360, false); // CP2
+ctx.stroke();
+
+// bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY)
+ctx.beginPath();
+ctx.strokeStyle = colorYellow;
+ctx.lineWidth = 5;
+ctx.moveTo(200, 300);
+ctx.bezierCurveTo(300, 100, 500, 650, 700, 300);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = colorPurple;
+ctx.lineWidth = 5;
+ctx.moveTo(200, 300);
+ctx.lineTo(300, 100);
+ctx.lineTo(500, 650);
+ctx.lineTo(700, 300);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "lightgray";
+ctx.lineWidth = 3;
+ctx.moveTo(300, 100);
+ctx.lineTo(250, 300);
+ctx.stroke();
