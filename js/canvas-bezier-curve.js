@@ -4,6 +4,11 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener("bezier-curve", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
 const radius = 5;
 const angle = Math.PI / 180;
 
@@ -43,7 +48,7 @@ ctx.beginPath();
 ctx.strokeStyle = colorYellow;
 ctx.lineWidth = 5;
 ctx.moveTo(200, 300);
-ctx.bezierCurveTo(300, 100, 500, 650, 700, 300);
+ctx.bezierCurveTo(300, 400, 500, 650, 700, 300);
 ctx.stroke();
 
 ctx.beginPath();
@@ -60,4 +65,11 @@ ctx.strokeStyle = "lightgray";
 ctx.lineWidth = 3;
 ctx.moveTo(300, 100);
 ctx.lineTo(250, 300);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.strokeStyle = "lightgray";
+ctx.lineWidth = 5;
+ctx.moveTo(500, 650);
+ctx.lineTo(600, 300);
 ctx.stroke();
